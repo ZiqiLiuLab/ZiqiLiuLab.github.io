@@ -17,7 +17,7 @@ cover:          /assets/images/covers/cover3.jpg
 authors:
   - Ziqi Liu
   - Peng Zeng
-  - Yu Ding
+  - Yi Ding
 
 links:
   arXiv: https://arxiv.org/abs/2506.00614
