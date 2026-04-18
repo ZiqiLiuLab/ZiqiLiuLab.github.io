@@ -5,8 +5,8 @@ date: 2021-09-12 00:01:00 +0800
 height: 295px
 images:
 - src: /assets/images/photos/academic/20260417_QE.jpg
-  title: Photo 1
-  desc: Description 1.
+  title: After QE exam with my supervisor
+#   desc: Description 1.
 # - src: https://picsum.photos/seed/first1111/800/800
 #   title: Photo 1
 #   desc: Description 1.
