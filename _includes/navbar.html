@@ -1,27 +1,18 @@
-<nav style="background:#ceebfb; border-bottom:1px solid #b0d8f0; position:fixed; top:0; left:0; right:0; z-index:1000;">
-  <div class="{% if page.container_class %}{{ page.container_class }}{% else %}container-lg{% endif %}" style="display:flex; align-items:center; justify-content:space-between; height:52px;">
- 
-    <a href="{{ '/' | relative_url }}" style="font-size:15px; font-weight:500; color:#1a4a6b; letter-spacing:-0.01em; text-decoration:none;">
-      {{ site.data.profile.navbar_name }}
-    </a>
- 
-    <ul style="display:flex; gap:2px; list-style:none; margin:0; padding:0; align-items:center;">
-      {% for item in site.data.navigation.pages %}
-      <li style="position:relative;">
-        <a href="{{ item.url | relative_url }}"
-          style="font-size:13px; padding:5px 12px; border-radius:5px; text-decoration:none; display:block;
-                 color:{% if item.name == page.navbar_title %}#1a4a6b{% else %}#2e6a94{% endif %};
-                 font-weight:{% if item.name == page.navbar_title %}500{% else %}400{% endif %};
-                 background:{% if item.name == page.navbar_title %}rgba(255,255,255,0.4){% else %}transparent{% endif %};">
-          {{ item.name }}
-          {% if item.name == page.navbar_title %}
-          <span style="display:block; height:2px; background:#7ecef4; border-radius:1px; margin-top:2px;"></span>
-          {% endif %}
-        </a>
-      </li>
-      {% endfor %}
-    </ul>
- 
-  </div>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top mb-5 shadow-sm">
+    <div class="{% if page.container_class %}{{ page.container_class }}{% else %}container-lg{% endif %}">
+        <a class="navbar-brand"><strong>{{site.data.profile.navbar_name}}</strong></a>
+        <button class="navbar-toggler" style="font-size: 1em; padding: 0.5em;" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-map"></i> Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                {% for item in site.data.navigation.pages %}
+                <li class="nav-item {% if item.name == page.navbar_title %}active{% endif %}">
+                    <a class="nav-link" href="{{ item.url | relative_url }}">{{ item.name }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
 </nav>
- 
